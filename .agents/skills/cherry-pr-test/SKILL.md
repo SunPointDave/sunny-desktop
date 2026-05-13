@@ -1,11 +1,11 @@
 ---
 name: cherry-pr-test
-description: Test Cherry Studio PRs by checking out the branch, launching the Electron app in debug mode, and running interactive UI tests via CDP.
+description: Test Sunny PRs by checking out the branch, launching the Electron app in debug mode, and running interactive UI tests via CDP.
 ---
 
-# Cherry Studio PR Test
+# Sunny PR Test
 
-Automated PR testing workflow for Cherry Studio. Checks out a PR, launches
+Automated PR testing workflow for Sunny. Checks out a PR, launches
 the Electron app with Chrome DevTools Protocol, connects agent-browser, and
 runs interactive UI + code review tests.
 
@@ -17,7 +17,7 @@ runs interactive UI + code review tests.
 
 ## Constraints
 
-- Always kill existing Cherry Studio processes before launching a new instance.
+- Always kill existing Sunny processes before launching a new instance.
 - Never leave debug processes running after testing completes.
 - Always switch back to the default branch after testing.
 - Always show the test report to the user before posting it.
@@ -26,7 +26,7 @@ runs interactive UI + code review tests.
 
 `$ARGUMENTS` may contain:
 - A PR number (e.g., `13955`)
-- A PR URL (e.g., `https://github.com/CherryHQ/cherry-studio/pull/13955`)
+- A PR URL (e.g., `https://sunpointit.com/pull/13955`)
 - Keywords like "latest", "recent" to pick a recent PR
 - Empty — list recent PRs and let the user choose
 
@@ -74,9 +74,9 @@ Record all findings for the final report.
 
 #### Launch App
 
-1. **Kill any existing Cherry Studio processes** (graceful SIGTERM first):
+1. **Kill any existing Sunny processes** (graceful SIGTERM first):
    ```bash
-   pkill -f "cherry-studio.*Electron" 2>/dev/null
+   pkill -f "sunny.*Electron" 2>/dev/null
    pkill -f "electron-vite" 2>/dev/null
    lsof -ti :9222 | xargs kill 2>/dev/null
    lsof -ti :5173 | xargs kill 2>/dev/null
@@ -115,7 +115,7 @@ Record all findings for the final report.
    ```bash
    agent-browser tab
    ```
-   You should see the main Cherry Studio page at `http://localhost:5173/`.
+   You should see the main Sunny page at `http://localhost:5173/`.
    If multiple tabs are listed, use `agent-browser tab <N>` to select the main one.
 
 3. **Handle first-launch scenarios**:
@@ -159,9 +159,9 @@ should guide your testing strategy.
 
 After testing:
 
-1. **Kill all Cherry Studio processes** (graceful SIGTERM first):
+1. **Kill all Sunny processes** (graceful SIGTERM first):
    ```bash
-   pkill -f "cherry-studio.*Electron" 2>/dev/null
+   pkill -f "sunny.*Electron" 2>/dev/null
    pkill -f "electron-vite" 2>/dev/null
    lsof -ti :9222 | xargs kill 2>/dev/null
    lsof -ti :5173 | xargs kill 2>/dev/null

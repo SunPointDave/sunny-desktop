@@ -31,7 +31,7 @@ import { openClawService } from './services/OpenClawService'
 import { nodeTraceService } from './services/NodeTraceService'
 import powerMonitorService from './services/PowerMonitorService'
 import {
-  CHERRY_STUDIO_PROTOCOL,
+  SUNNY_PROTOCOL,
   handleProtocolUrl,
   registerProtocolClient,
   setupAppImageDeepLink
@@ -169,7 +169,7 @@ if (!app.requestSingleInstanceLock()) {
     powerMonitorService.init()
     analyticsService.init()
 
-    // Extract bundled rtk binary to ~/.cherrystudio/bin/ on first run
+    // Extract bundled rtk binary to ~/.sunny/bin/ on first run
     extractRtkBinaries().catch((error) => {
       logger.warn('Failed to extract rtk binaries (non-fatal)', {
         error: error instanceof Error ? error.message : String(error)
@@ -256,7 +256,7 @@ if (!app.requestSingleInstanceLock()) {
   })
 
   const handleOpenUrl = (args: string[]) => {
-    const url = args.find((arg) => arg.startsWith(CHERRY_STUDIO_PROTOCOL + '://'))
+    const url = args.find((arg) => arg.startsWith(SUNNY_PROTOCOL + '://'))
     if (url) handleProtocolUrl(url)
   }
 

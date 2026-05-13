@@ -1,12 +1,12 @@
 {
-  "name": "CherryStudio",
-  "version": "1.9.5",
+  "name": "Sunny",
+  "version": "1.0.0",
   "private": true,
-  "description": "A powerful AI assistant for producer.",
-  "desktopName": "CherryStudio.desktop",
+  "description": "Sunny AI — a branded AI chat assistant by SunPoint IT Solutions.",
+  "desktopName": "Sunny.desktop",
   "main": "./out/main/index.js",
-  "author": "support@cherry-ai.com",
-  "homepage": "https://github.com/CherryHQ/cherry-studio",
+  "author": "SunPoint IT Solutions",
+  "homepage": "https://sunpointit.com",
   "engines": {
     "node": ">=24.11.1"
   },

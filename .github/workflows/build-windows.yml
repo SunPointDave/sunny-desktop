@@ -1,0 +1,59 @@
+name: Build Windows Installer
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.15.0'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '10.27.0'
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: pwsh
+        run: |
+          Write-Output "store_path=$(pnpm store path --silent)" >> $env:GITHUB_OUTPUT
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.store_path }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts
+        shell: pwsh
+
+      - name: Build Windows x64 installer
+        run: pnpm build:win:x64
+        shell: pwsh
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sunny-windows-installer
+          path: dist/*.exe
+          if-no-files-found: error
+
+      - name: List dist contents
+        shell: pwsh
+        run: Get-ChildItem dist/ | Format-Table Name, Length

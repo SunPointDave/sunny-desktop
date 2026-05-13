@@ -147,7 +147,7 @@ export class SkillService {
    * Seed skill enablement for a freshly created agent.
    *
    * Every skill marked `source = 'builtin'` is auto-enabled for the new
-   * agent — they ship with Cherry Studio and users expect them to work
+   * agent — they ship with Sunny and users expect them to work
    * everywhere. Other skills default to disabled.
    */
   async initSkillsForAgent(agentId: string, workspace: string | undefined): Promise<void> {
@@ -824,7 +824,7 @@ export class SkillService {
   }
 
   private async createTempDir(prefix: string): Promise<string> {
-    const tempDir = path.join(app.getPath('temp'), 'cherry-studio', 'skill-install', `${prefix}-${Date.now()}`)
+    const tempDir = path.join(app.getPath('temp'), 'sunny', 'skill-install', `${prefix}-${Date.now()}`)
     await fs.promises.mkdir(tempDir, { recursive: true })
     return tempDir
   }

@@ -902,11 +902,11 @@ export const PROVIDER_URLS: Record<SystemProviderId, ProviderUrls> = {
       url: 'https://api.ppinfra.com/v3/openai'
     },
     websites: {
-      official: 'https://ppio.com/user/register?invited_by=JYT9GD&utm_source=github_cherry-studio&redirect=/',
+      official: 'https://ppio.com/user/register?invited_by=JYT9GD&utm_source=github_sunny&redirect=/',
       apiKey:
-        'https://ppio.com/user/register?invited_by=JYT9GD&utm_source=github_cherry-studio&redirect=/settings/key-management',
-      docs: 'https://docs.cherry-ai.com/pre-basic/providers/ppio?invited_by=JYT9GD&utm_source=github_cherry-studio',
-      models: 'https://ppio.com/model-api/product/llm-api?invited_by=JYT9GD&utm_source=github_cherry-studio'
+        'https://ppio.com/user/register?invited_by=JYT9GD&utm_source=github_sunny&redirect=/settings/key-management',
+      docs: 'https://docs.cherry-ai.com/pre-basic/providers/ppio?invited_by=JYT9GD&utm_source=github_sunny',
+      models: 'https://ppio.com/model-api/product/llm-api?invited_by=JYT9GD&utm_source=github_sunny'
     }
   },
   gemini: {

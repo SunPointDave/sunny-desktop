@@ -14,8 +14,8 @@ const swaggerOptions: swaggerJSDoc.Options = {
       version: '1.0.0',
       description: 'OpenAI-compatible API for Cherry Studio with additional Cherry-specific endpoints',
       contact: {
-        name: 'Cherry Studio',
-        url: 'https://github.com/CherryHQ/cherry-studio'
+        name: 'Sunny',
+        url: 'https://sunpointit.com'
       }
     },
     servers: [

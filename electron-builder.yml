@@ -1,5 +1,5 @@
-appId: com.kangfenmao.CherryStudio
-productName: Cherry Studio
+appId: com.sunpointit.sunny
+productName: Sunny
 electronLanguages:
   - zh-CN
   - zh-TW
@@ -14,9 +14,9 @@ directories:
   buildResources: build
 
 protocols:
-  - name: Cherry Studio
+  - name: Sunny
     schemes:
-      - cherrystudio
+      - sunny
 files:
   - "**/*"
   - "!**/{.vscode,.yarn,.yarn-lock,.github,.cursorrules,.prettierrc}"
@@ -76,7 +76,7 @@ asarUnpack:
   - "node_modules/@img/sharp-*/**"
 
 win:
-  executableName: Cherry Studio
+  executableName: Sunny
   artifactName: ${productName}-${version}-${arch}-setup.${ext}
   target:
     - target: nsis
@@ -113,7 +113,7 @@ dmg:
   writeUpdateInfo: false
 linux:
   artifactName: ${productName}-${version}-${arch}.${ext}
-  executableName: CherryStudio
+  executableName: Sunny
   target:
     - target: AppImage
     - target: deb
@@ -122,17 +122,17 @@ linux:
   category: Utility
   desktop:
     entry:
-      Name: Cherry Studio
-      StartupWMClass: CherryStudio
+      Name: Sunny
+      StartupWMClass: Sunny
   mimeTypes:
-    - x-scheme-handler/cherrystudio
+    - x-scheme-handler/sunny
 rpm:
   # Workaround for electron build issue on rpm package:
   # https://github.com/electron/forge/issues/3594
   fpm: ["--rpm-rpmbuild-define=_build_id_links none"]
 publish:
   provider: generic
-  url: https://releases.cherry-ai.com
+  url: https://sunpointit.com
 electronDownload:
   mirror: https://npmmirror.com/mirrors/electron/
 beforePack: scripts/before-pack.js
@@ -142,7 +142,7 @@ artifactBuildCompleted: scripts/artifact-build-completed.js
 releaseInfo:
   releaseNotes: |
     <!--LANG:en-->
-    Cherry Studio 1.9.5 - Bug Fixes & Improvements
+    Sunny 1.9.5 - Bug Fixes & Improvements
 
     🐛 Bug Fixes
     - [Search] Fixed built-in web search truncating assistant responses when web search was the only active tool
@@ -173,7 +173,7 @@ releaseInfo:
     - [Painting] Added gpt-image-2 support to AiHubMix provider
 
     <!--LANG:zh-CN-->
-    Cherry Studio 1.9.5 - 错误修复与改进
+    Sunny 1.9.5 - 错误修复与改进
 
     🐛 问题修复
     - [搜索] 修复内置网页搜索作为唯一活动工具时截断助手回复的问题
