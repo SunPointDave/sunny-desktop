@@ -36,6 +36,14 @@
 
 <p align="center">English | <a href="./docs/zh/README.md">中文</a> | <a href="https://cherry-ai.com">Official Site</a> | <a href="https://docs.cherry-ai.com/docs/en-us">Documents</a> | <a href="./docs/en/guides/development.md">Development</a> | <a href="https://sunpointit.com/issues">Feedback</a><br></p>
 
+> **Sunny Desktop by SunPoint IT Solutions**
+> 
+> This is a branded fork of Cherry Studio for internal SunPoint IT Solutions use.
+> 
+> **Windows Installer:** Download the latest `Sunny-1.0.0-x64-setup.exe` from the [GitHub Actions artifacts](https://github.com/SunPointDave/sunny-desktop/actions) or the [Releases page](https://github.com/SunPointDave/sunny-desktop/releases).
+> 
+> To build locally, see [Development Guide](./docs/en/guides/development.md).
+
 <div align="center">
 
 [![][deepwiki-shield]][deepwiki-link]
