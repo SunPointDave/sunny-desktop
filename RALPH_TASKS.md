@@ -26,14 +26,16 @@
   - Verified: All steps passed (setup, checkout, Node.js, pnpm, install, build, upload, complete)
 
 ## Phase 3: Verification & Delivery
-- [ ] 3.1 Download the Windows installer artifact
-  - Verify: `gh run download <run-id> --repo <org>/sunny-desktop --name installer` produces a `.exe`
-- [ ] 3.2 Verify artifact integrity
-  - Verify: File size is between 50 MB and 200 MB
-  - Verify: File name matches `Sunny-*.exe`
-- [ ] 3.3 Document the final artifact location
-  - Update `README.md` at repo root with download instructions
-  - Verify: `git -C cherry-studio-fork diff README.md` shows the update
-  - Verify: `git -C cherry-studio-fork push origin main` succeeds
-- [ ] 3.4 Update parent project status
-  - Append one line to `/home/azureuser/OpenCodeAzure/Projects/Sunny/Sunny.md` under Notes: "Sunny Desktop v1.0.0 Windows installer built and available."
+- [x] 3.1 Download the Windows installer artifact
+  - Verified: `gh run download 25818239867 --repo SunPointDave/sunny-desktop` produced `.exe` files
+  - Files: `Sunny-1.0.0-x64-setup.exe` and `Sunny-1.0.0-x64-portable.exe`
+- [x] 3.2 Verify artifact integrity
+  - Verified: File sizes are 135 MB and 134 MB (within 50-200 MB range)
+  - Verified: File names match `Sunny-*.exe`
+  - Verified: `file` command confirms PE32 executable (GUI) Nullsoft Installer self-extracting archive
+- [x] 3.3 Document the final artifact location
+  - Updated `README.md` with download instructions pointing to GitHub Actions artifacts and Releases page
+  - Verified: `git diff README.md` shows the update
+  - Verified: `git push origin main` succeeded
+- [x] 3.4 Update parent project status
+  - Appended to `/home/azureuser/OpenCodeAzure/Projects/Sunny/Sunny.md` under Notes
